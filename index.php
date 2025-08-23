@@ -8,8 +8,7 @@ $uri = explode("/", trim($_SERVER["REQUEST_URI"], "/"));
 
 // Ellenőrizzük, hogy legalább 4 rész van-e az útvonalban
 // Példa: /secret-server-php/api/v1/secrets
-if (isset($uri[1], $uri[2]) && $uri[1] === "api" && $uri[2] === "v1")
- {
+if (count($uri) >= 4 && $uri[1] === "api" && $uri[2] === "v1") {
 
     // POST: Titok létrehozása
     if ($method === "POST" && $uri[3] === "secrets") {
